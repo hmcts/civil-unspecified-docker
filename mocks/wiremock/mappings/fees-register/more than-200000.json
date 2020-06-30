@@ -10,7 +10,7 @@
         "equalTo": "civil"
       },
       "jurisdiction2": {
-        "equalTo": "civil"
+        "equalTo": "county court"
       },
       "channel": {
         "equalTo": "default"
