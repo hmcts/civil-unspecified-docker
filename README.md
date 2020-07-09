@@ -1,4 +1,4 @@
-# Unspecified civil money claims customised version of CCD Docker :whale:
+# Unspecified civil unspecified claims customised version of CCD Docker :whale:
 
 - [Prerequisites](#prerequisites)
 - [Quick start](#quick-start)
@@ -37,7 +37,7 @@ Pulling latest Docker images:
 Creating and starting the containers:
 
 ```bash
-./ccd compose up -d
+    ./ccd compose up -d
 ```
 
 Scripts to create test users and import CCD definitions are located in bin directory.

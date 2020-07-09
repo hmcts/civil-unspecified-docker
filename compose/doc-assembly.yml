@@ -1,0 +1,41 @@
+---
+version: '2.4'
+
+services:
+  service-auth-provider-api:
+    environment:
+      MICROSERVICEKEYS_DG_DOCASSEMBLY_API: "${IDAM_KEY_DOC_ASSEMBLY}"
+
+  doc-assembly-api:
+    image: hmctspublic.azurecr.io/dg/docassembly
+    healthcheck:
+      disable: true
+    environment:
+      - no_proxy=idam-api,service-auth-provider-api,$no_proxy
+      - IDAM_API_BASE_URI=http://idam-api:5000
+      - S2S_BASE_URI=http://service-auth-provider-api:8080
+      - DM_STORE_APP_URL=http://dm-store:4460
+      - REFORM_ENVIRONMENT=local
+      - S2S_NAMES_WHITELIST=em_api,em_gw,ccd_gw,ccd_data,sscs,dg_tmpl_mgmt,dg_docassembly,dm-store
+      - CASE_WORKER_ROLES=caseworker-civil,caseworker-civil-solicitor
+      - DOCMOSIS_ACCESS_KEY=${DOCMOSIS_ACCESS_KEY}
+      - DOCMOSIS_TEMPLATES_ENDPOINT_AUTH=${DOCMOSIS_TEMPLATES_ENDPOINT_AUTH}
+      - OPEN_ID_API_BASE_URI=http://idam-web-public:5000/o
+      - OIDC_ISSUER_BASE_URI=http://fr-am:8080/openam/oauth2/hmcts
+    mem_limit: 256m
+    memswap_limit: 0
+    depends_on:
+      service-auth-provider-api:
+        condition: service_started
+      dm-store:
+        condition: service_started
+    ports:
+      - 4666:8080
+    #   debug port exposed
+    #   - 5006:5005
+    networks:
+      - ccd-network
+
+networks:
+  ccd-network:
+    external: true
