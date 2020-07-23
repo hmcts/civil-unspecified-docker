@@ -11,7 +11,7 @@ services:
       - DOCMOSIS_KEY
       - DOCMOSIS_SITE="Free Trial License"
     volumes:
-      - ./docker/docmosis/templates:/home/docmosis/templates:rw
+      - ../../docker/docmosis/templates:/home/docmosis/templates:rw
     ports:
       - 5433:8080
 
