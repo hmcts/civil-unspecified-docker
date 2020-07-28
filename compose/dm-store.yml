@@ -4,7 +4,7 @@ version: '2.4'
 services:
   ccd-case-management-web:
     environment:
-      DM_URL: http://localhost:4506/documents
+      DM_URL: http://localhost:3453/documents
       DM_URL_REMOTE: http://dm-store:4506/documents
     depends_on:
       - dm-store
