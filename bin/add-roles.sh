@@ -19,3 +19,9 @@ do
   ${dir}/utils/idam-add-role.sh "caseworker-civil-${role}"
   ${dir}/utils/ccd-add-role.sh "caseworker-civil-${role}"
 done
+
+roles=("caa" "case-manager" "finance-manager" "organisation-manager" "user-manager")
+for role in "${roles[@]}"
+do
+  ${dir}/utils/idam-add-role.sh "pui-${role}"
+done
