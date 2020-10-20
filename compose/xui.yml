@@ -2,6 +2,43 @@
 version: '2.4'
 
 services:
+  manage-orgs:
+    image: "hmctspublic.azurecr.io/xui/mo-webapp:latest"
+    environment:
+      MICROSERVICE: xui_webapp_mo
+      PROTOCOL: http
+      PUI_ENV: local
+
+      S2S_SERVICE: http://service-auth-provider-api:8080
+      IDAM_WEB_SERVICE:  http://localhost:3501
+      IDAM_API_SERVICE: http://idam-api:5000
+      IDAM_CLIENT: xui_webapp_mo
+      OAUTH_CALLBACK_URL: /oauth2/callback
+      RD_PROFESSIONAL_API_SERVICE: http://wiremock:8080
+      MANAGE_CASE_LINK: http://localhost:3333/cases
+      MANAGE_ORG_LINK: http://localhost:3000
+
+      REDISCLOUD_URL: http://dummyrediscloudurl
+
+      LAUNCH_DARKLY_CLIENT_ID: dummy
+
+      FEATURE_REDIS_ENABLED: "false"
+      FEATURE_APP_INSIGHTS_ENABLED: "false"
+      FEATURE_SECURE_COOKIE_ENABLED: "false"
+
+      S2S_SECRET:  "${IDAM_KEY_XUI_WEBAPP_MO}"
+      IDAM_SECRET: "${OAUTH2_CLIENT_XUI_MO}"
+
+    ports:
+      - 3000:3000
+    depends_on:
+      idam-api:
+        condition: service_started
+      ccd-data-store-api:
+        condition: service_started
+    networks:
+      - ccd-network
+
   xui:
     image: "hmctspublic.azurecr.io/xui/webapp:pr-616-e49ee382"
     environment:
