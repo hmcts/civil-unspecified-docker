@@ -13,7 +13,7 @@ services:
       IDAM_WEB_SERVICE:  http://localhost:3501
       IDAM_API_SERVICE: http://idam-api:5000
       IDAM_CLIENT: xui_webapp_mo
-      OAUTH_CALLBACK_URL: oauth2/callback
+      OAUTH_CALLBACK_URL: /oauth2/callback
       RD_PROFESSIONAL_API_SERVICE: http://wiremock:8080
       MANAGE_CASE_LINK: http://localhost:3333/cases
       MANAGE_ORG_LINK: http://localhost:3000
