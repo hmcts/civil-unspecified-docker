@@ -5,7 +5,7 @@ services:
   manage-orgs:
     image: "hmctspublic.azurecr.io/xui/mo-webapp:latest"
     environment:
-      MICROSERVICE: xui_webapp_mo
+      MICROSERVICE: xui_webapp
       PROTOCOL: http
       PUI_ENV: local
 
@@ -13,7 +13,7 @@ services:
       IDAM_WEB_SERVICE:  http://localhost:3501
       IDAM_API_SERVICE: http://idam-api:5000
       IDAM_CLIENT: xui_webapp_mo
-      OAUTH_CALLBACK_URL: /oauth2/callback
+      OAUTH_CALLBACK_URL: oauth2/callback
       RD_PROFESSIONAL_API_SERVICE: http://wiremock:8080
       MANAGE_CASE_LINK: http://localhost:3333/cases
       MANAGE_ORG_LINK: http://localhost:3000
@@ -25,8 +25,10 @@ services:
       FEATURE_REDIS_ENABLED: "false"
       FEATURE_APP_INSIGHTS_ENABLED: "false"
       FEATURE_SECURE_COOKIE_ENABLED: "false"
+      APPINSIGHTS_INSTRUMENTATIONKEY: fake
+      GOOGLE_ANALYTICS_KEY: fake
 
-      S2S_SECRET:  "${IDAM_KEY_XUI_WEBAPP_MO}"
+      S2S_SECRET:  "${IDAM_KEY_XUI_WEBAPP}"
       IDAM_SECRET: "${OAUTH2_CLIENT_XUI_MO}"
 
     ports:
