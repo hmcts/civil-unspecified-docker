@@ -3,7 +3,7 @@ version: '2.4'
 
 services:
   manage-orgs:
-    image: "hmctspublic.azurecr.io/xui/mo-webapp:latest"
+    image: "hmctspublic.azurecr.io/xui/mo-webapp@sha256:66b609d8bcc6ad38e090b60b3cae65d6a68a5c9dccabce89921f527b7137f418"
     environment:
       MICROSERVICE: xui_webapp
       PROTOCOL: http
@@ -17,10 +17,13 @@ services:
       RD_PROFESSIONAL_API_SERVICE: http://wiremock:8080
       MANAGE_CASE_LINK: http://localhost:3333/cases
       MANAGE_ORG_LINK: http://localhost:3000
+      SERVICES_CCD_DATA_STORE_API: http://localhost:4452
+      SERVICES_MCA_PROXY_API: http://localhost:4454
 
       REDISCLOUD_URL: http://dummyrediscloudurl
 
-      LAUNCH_DARKLY_CLIENT_ID: dummy
+      # local launch darkly client required to enable unassigned-cases feature
+      LAUNCH_DARKLY_CLIENT_ID: 5f902f8167730c09cbfc5349
 
       FEATURE_REDIS_ENABLED: "false"
       FEATURE_APP_INSIGHTS_ENABLED: "false"
