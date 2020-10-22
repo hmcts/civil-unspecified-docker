@@ -1,0 +1,26 @@
+---
+version: '2.4'
+
+services:
+  case-assignment:
+    image:  'hmctspublic.azurecr.io/aac/manage-case-assignment:latest'
+    environment:
+      IDAM_API_URL: http://idam-api:5000
+      IDAM_OIDC_URL: http://idam-api:5000
+      S2S_URL: http://service-auth-provider-api:8080
+      MANAGE_CASE_S2S_AUTHORISED_SERVICES: xui_webapp
+      CCD_DATA_STORE_API_BASE_URL: http://ccd-data-store-api:4452
+      PRD_HOST: http://wiremock:8080
+
+      MANAGE_CASE_S2S_KEY: "${IDAM_KEY_CASE_ASSIGNMENT}"
+      IDAM_CLIENT_SECRET: "${OAUTH2_CLIENT_CASE_ASSIGNMENT}"
+      NOTIFY_MCA_API_KEY: notify-test-api-key
+      IDAM_SYSTEM_USER_USERNAME: civil-system-update@mailnesia.com
+      IDAM_SYSTEM_USER_PASSWORD: Password12
+    ports:
+      - 4454:4454
+    networks:
+      - ccd-network
+networks:
+  ccd-network:
+    external: true
