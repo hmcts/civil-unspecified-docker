@@ -1,5 +1,7 @@
 [
-  {"email": "solicitor@example.com", "roles": "caseworker,caseworker-civil,caseworker-civil-solicitor", "lastName": "Solicitor"},
+  {"email": "solicitor@example.com", "roles": "caseworker,caseworker-civil,caseworker-civil-solicitor,pui-organisation-manager, pui-finance-manager, pui-case-manager, pui-caa, pui-user-manager", "lastName": "Solicitor"},
   {"email": "civil-system-update@mailnesia.com", "roles": "caseworker,caseworker-civil,caseworker-civil-systemupdate", "lastName": "System-update"},
-  {"email": "organisation-manager@mailnesia.com", "roles": "caseworker,caseworker-caa,caseworker-civil,pui-caa,pui-case-manager,pui-finance-manager,pui-organisation-manager,pui-user-manager", "lastName": "Org-manager"}
+  {"email": "claimant-solicitor-manager@mailnesia.com", "roles": "caseworker,caseworker-caa,caseworker-civil,caseworker-civil-solicitor,pui-caa,pui-case-manager,pui-finance-manager,pui-organisation-manager,pui-user-manager", "lastName": "Org-manager"},
+  {"email": "defendant-solicitor-manager@mailnesia.com", "roles": "caseworker,caseworker-caa,caseworker-civil,caseworker-civil-solicitor,pui-caa,pui-case-manager,pui-finance-manager,pui-organisation-manager,pui-user-manager", "lastName": "Org-manager"},
+  {"email": "organisation-approver@mailnesia.com", "roles": "prd-admin", "lastName": "Org-approver"}
 ]
