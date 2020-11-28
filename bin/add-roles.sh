@@ -4,6 +4,7 @@ set -eu
 
 dir=$(dirname ${0})
 
+${dir}/utils/idam-add-role.sh "abcdertf"
 ${dir}/utils/idam-add-role.sh "ccd-import"
 ${dir}/utils/idam-add-role.sh "caseworker"
 ${dir}/utils/idam-add-role.sh "caseworker-civil"
@@ -35,13 +36,5 @@ ${dir}/utils/idam-add-role.sh "caseworker-ia-legalrep-solicitor"
 ${dir}/utils/idam-add-role.sh "caseworker-publiclaw"
 ${dir}/utils/idam-add-role.sh "caseworker-publiclaw-solicitor"
 
-${dir}/utils/idam-add-role.sh "caseworker-divorce"
-roles=("financialremedy" "financialremedy-solicitor" "solicitor")
-for role in "${roles[@]}"
-do
-  ${dir}/utils/idam-add-role.sh "caseworker-divorce-${role}"
-done
-
-${dir}/utils/idam-add-role.sh "caseworker-caa"
-${dir}/utils/idam-add-role.sh "xui-approver-userdata"
-#${dir}/utils/idam-add-role.sh "prd-admin" ["caseworker","caseworker-caa","caseworker-divorce","caseworker-divorce-solicitor","caseworker-divorce-financialremedy","caseworker-divorce-financialremedy-solicitor","caseworker-probate","caseworker-ia","caseworker-probate-solicitor","caseworker-publiclaw","caseworker-ia-legalrep-solicitor","caseworker-publiclaw-solicitor","caseworker-civil","caseworker-civil-solicitor","xui-approver-userdata","pui-caa","prd-admin","pui-case-manager","pui-finance-manager","pui-organisation-manager","pui-user-manager"]
+prdRoles=('"caseworker"','"caseworker-caa"','"caseworker-divorce"','"caseworker-divorce-solicitor"','"caseworker-divorce-financialremedy"','"caseworker-divorce-financialremedy-solicitor"','"caseworker-probate"','"caseworker-ia"','"caseworker-probate-solicitor"','"caseworker-publiclaw"','"caseworker-ia-legalrep-solicitor"','"caseworker-publiclaw-solicitor"','"caseworker-civil"','"caseworker-civil-solicitor"','"xui-approver-userdata"','"pui-caa"','"prd-admin"','"pui-case-manager"','"pui-finance-manager"','"pui-organisation-manager"','"pui-user-manager"')
+${dir}/utils/idam-add-role.sh "prd-admin" "${prdRoles[@]}"
