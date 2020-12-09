@@ -170,17 +170,38 @@ To enable the compose file manually run the following:
 ./ccd enable backend dm-store sidam sidam-local sidam-local-ccd xui camunda
 ```
 
-Camunda is available at `http://localhost:9404/`. To login into the cockpit application use: 
+Camunda is available at `http://localhost:9404/`. To login into the cockpit application use:
 
-`username: demo` 
+`username: demo`
 
 `password: demo`
 
-Within Cockpit you can find information around deployed processes. 
+Within Cockpit you can find information around deployed processes.
 
-The easiest way to deploy a process is via the Camunda Modeler and setting the REST endpoint value to 
-`http://localhost:9404/engine-rest`. However this can also be done via the REST API. You can find full documentation of the 
+The easiest way to deploy a process is via the Camunda Modeler and setting the REST endpoint value to
+`http://localhost:9404/engine-rest`. However this can also be done via the REST API. You can find full documentation of the
 REST API [here.](https://docs.camunda.org/manual/latest/reference/rest/)
+
+----
+
+## Idam Stub
+
+To use Idam stub instead of real services, run the following:
+
+```
+./bin/use-idam-stub.sh
+```
+
+To switch back to Idam:
+
+```
+./bin/use-idam-stub.sh false
+```
+
+Every time the script was used some containers needs rebuilding. To do that run:
+```
+./ccd compose up -d
+```
 
 ----
 
