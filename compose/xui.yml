@@ -39,8 +39,8 @@ services:
     ports:
       - 3333:3000
     depends_on:
-      - ccd-api-gateway
-      - ccd-data-store-api
+      ccd-data-store-api:
+        condition: service_started
     networks:
       - ccd-network
 

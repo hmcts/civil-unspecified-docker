@@ -51,7 +51,7 @@ services:
       # - 5005:5005
     depends_on:
 # Replace idam-api with ccd-test-stubs-service to enable ccd test stub service
-      idam-api:
+      ccd-test-stubs-service:
         condition: service_started
       ccd-shared-database:
         condition: service_started
@@ -91,7 +91,7 @@ services:
       # - 5005:5005
     depends_on:
 # Replace idam-api with ccd-test-stubs-service to enable ccd test stub service
-      idam-api:
+      ccd-test-stubs-service:
         condition: service_started
       ccd-shared-database:
         condition: service_started
@@ -151,9 +151,9 @@ services:
       - ccd-network
     #provide custom Idam and CCD roles when using Idam Stub.
 #    volumes: #comment required for use-idam-stub.sh to find this line
-#      - ${PWD}/resources/idam_stub_get_details_custom.json:/opt/app/wiremock/mappings/idam_get_details.json
-#      - ${PWD}/resources/idam_stub_get_userinfo_custom.json:/opt/app/wiremock/mappings/idam_get_userinfo.json
-#      - ${PWD}/resources/idam_stub_get_userinfo_post_custom.json:/opt/app/wiremock/mappings/idam_get_userinfo_post.json
+#      - ${PWD}/resources/idam-stub/get_details.json:/opt/app/wiremock/mappings/idam_get_details.json
+#      - ${PWD}/resources/idam-stub/get_userinfo.json:/opt/app/wiremock/mappings/idam_get_userinfo.json
+#      - ${PWD}/resources/idam-stub/post_userinfo.json:/opt/app/wiremock/mappings/idam_post_userinfo.json
 
 volumes:
   ccd-docker-ccd-shared-database-data:

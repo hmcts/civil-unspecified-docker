@@ -205,8 +205,7 @@ export IDAM_STUB_ENABLED=true && ./bin/toggle-idam-stub.sh
 spring.profiles.active=local,idam-stub
 ```
 
-If you want to run functional tests in new terminal tab, the env variable needs to be re-exported each time
-or added to `~/.zshrc` file:
+If you want to run functional tests in new terminal tab, the env variable needs to be re-exported or added to `~/.zshrc` file:
 ```
 export IDAM_STUB_ENABLED=true
 ```
