@@ -186,22 +186,42 @@ REST API [here.](https://docs.camunda.org/manual/latest/reference/rest/)
 
 ## Idam Stub
 
-To use Idam stub instead of real services, run the following:
-
+### Prerequisites:
+Add following line to your `/etc/hosts`:
 ```
-./bin/use-idam-stub.sh
-```
-
-To switch back to Idam:
-
-```
-./bin/use-idam-stub.sh false
+127.0.0.1	ccd-test-stubs-service
 ```
 
-Every time the script was used some containers needs rebuilding. To do that run:
+### Enable stub
+To use Idam stub instead of real service follow the steps:
+
+- Make sure you are in root directory (`civil-unspecified-docker`)
+- Run the command to enable stub and rebuild local environment:
 ```
-./ccd compose up -d
+export IDAM_STUB_ENABLED=true && ./bin/toggle-idam-stub.sh
 ```
+- Run unspec-service with profiles:
+```
+spring.profiles.active=local,idam-stub
+```
+
+If you want to run functional tests in new terminal tab, the env variable needs to be re-exported each time
+or added to `~/.zshrc` file:
+```
+export IDAM_STUB_ENABLED=true
+```
+
+### Switching back to real Idam
+
+- Run the command to disable stub and rebuild local environment:
+```
+unset IDAM_STUB_ENABLED && ./bin/toggle-idam-stub.sh
+```
+
+- Run unspec-service with the following profiles:
+ ```
+ spring.profiles.active=local
+ ```
 
 ----
 

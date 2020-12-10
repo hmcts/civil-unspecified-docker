@@ -2,11 +2,9 @@
 
 set -eu
 
-IDAM_STUB_ENABLED=${1:-true}
-
 ./ccd enable backend frontend dm-store sidam sidam-local sidam-local-ccd xui unspec docmosis camunda
 
-if [ ${IDAM_STUB_ENABLED} == "true" ]; then
+if [ ${IDAM_STUB_ENABLED:-false} == "true" ]; then
   ./ccd disable sidam sidam-local sidam-local-ccd
 
   sed  -i '' -e '/IDAM_STUB_SERVICE_NAME/s/^#//g' .env
@@ -18,8 +16,8 @@ if [ ${IDAM_STUB_ENABLED} == "true" ]; then
   sed -i '' -e '/#    volumes: #comment/s/^#//g' compose/backend.yml
   sed -i '' -e '/idam_get_details.json/s/^#//g' compose/backend.yml
   sed -i '' -e '/idam_get_userinfo.json/s/^#//g' compose/backend.yml
+  sed -i '' -e '/idam_stub_get_userinfo_post_custom.json/s/^#//g' compose/backend.yml
 else
-  unset IDAM_STUB_ENABLED
   sed  -i '' -e '/IDAM_STUB_SERVICE_NAME/s/^/#/g' .env
   sed  -i '' -e '/IDAM_STUB_LOCALHOST/s/^/#/g' .env
 
@@ -29,4 +27,7 @@ else
   sed -i '' -e '/    volumes: #comment/s/^/#/g' compose/backend.yml
   sed -i '' -e '/idam_get_details.json/s/^/#/g' compose/backend.yml
   sed -i '' -e '/idam_get_userinfo.json/s/^/#/g' compose/backend.yml
+  sed -i '' -e '/idam_stub_get_userinfo_post_custom.json/s/^/#/g' compose/backend.yml
 fi
+
+./ccd compose up -d
