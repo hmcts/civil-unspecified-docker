@@ -1,6 +1,27 @@
 {
+  "companyNumber": "1234",
+  "companyUrl": "abcd",
+  "contactInformation": [
+    {
+      "addressLine1": "Flat 12, Pinnacle Apartments",
+      "addressLine2": "Saffron Central Square 11",
+      "townCity": "London",
+      "county": "United Kingdom",
+      "postCode": "CR0 2GE",
+      "dxAddress": []
+    }
+  ],
+  "name": "Organisation",
   "organisationIdentifier": "62LYJRF",
-  "name": "Fake organisation for PBA",
+  "paymentAccount": [
+    "PBA0077597",
+    "PBA0078094"
+  ],
+  "sraRegulated": false,
   "status": "ACTIVE",
-  "paymentAccount": ["PBA0077597", "PBA0078094"]
+  "superUser": {
+    "firstName": "Org",
+    "lastName": "Admin",
+    "email": "civil-system-update@mailnesia.com"
+  }
 }
