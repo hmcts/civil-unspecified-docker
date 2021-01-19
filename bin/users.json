@@ -1,5 +1,5 @@
 [
-  {"email": "solicitor@example.com", "roles": "caseworker,caseworker-civil,caseworker-civil-solicitor,pui-organisation-manager,pui-case-manager,pui-caa,pui-user-manager", "lastName": "Solicitor"},
+  {"email": "solicitor@example.com", "roles": "caseworker,caseworker-civil,caseworker-civil-solicitor,pui-caa,,pui-organisation-manager,pui-case-manager,pui-user-manager", "lastName": "Solicitor"},
   {"email": "claimantsolicitor@gmail.com", "roles": "caseworker,caseworker-civil,caseworker-civil-solicitor,pui-caa,pui-case-manager,pui-organisation-manager,pui-user-manager", "lastName": "Claimant-solicitor"},
   {"email": "defendantsolicitor@gmail.com", "roles": "caseworker,caseworker-civil,caseworker-civil-solicitor,pui-caa,pui-case-manager,pui-organisation-manager,pui-user-manager", "lastName": "Defendant-solicitor"},
   {"email": "civil-system-update@mailnesia.com", "roles": "caseworker,caseworker-civil,caseworker-civil-systemupdate", "lastName": "System-update"},

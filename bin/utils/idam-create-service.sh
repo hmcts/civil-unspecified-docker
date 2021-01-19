@@ -18,7 +18,7 @@ echo -e "\nCreating service with:\nLabel: ${LABEL}\nClient ID: ${CLIENT_ID}\nCli
 STATUS=$(curl --silent --output /dev/null --write-out '%{http_code}' -X POST -H 'Content-Type: application/json' -H "Authorization: AdminApiAuthToken ${apiToken}" \
   ${IDAM_API_BASE_URL:-http://localhost:5000}/services \
   -d '{
-    "allowedRoles": ["'caseworker'"],
+    "allowedRoles": [],
     "description": "'${LABEL}'",
     "label": "'${LABEL}'",
     "oauth2ClientId": "'${CLIENT_ID}'",
