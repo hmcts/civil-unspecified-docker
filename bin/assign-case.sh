@@ -13,10 +13,7 @@ CASE_ID=${2}
 
 echo -e "\nAssigning case to defendant: ${DEFENDANT_EMAIL}"
 
-userToken=$(${dir}/utils/idam-access-token.sh "${DEFENDANT_EMAIL}" "Password12")
-
-echo "${userToken}"
-echo "${CASE_ID}"
+userToken=$(${dir}/utils/idam-access-token.sh "${DEFENDANT_EMAIL}" "Password12!")
 
 STATUS=$(curl --silent --output /dev/null --write-out '%{http_code}' -H 'Content-Type: application/json' -H "Authorization: Bearer ${userToken}" -X POST\
   http://localhost:4000/testing-support/assign-case/${CASE_ID} )
