@@ -1,27 +1,28 @@
 {
-  "companyNumber": "1234",
-  "companyUrl": "abcd",
+  "name": "Civil Damages Claims - Organisation 2",
+  "organisationIdentifier": "N5AFUXG",
   "contactInformation": [
     {
-      "addressLine1": "Flat 12, Pinnacle Apartments",
-      "addressLine2": "Saffron Central Square 11",
-      "townCity": "London",
-      "county": "United Kingdom",
-      "postCode": "CR0 2GE",
+      "addressLine1": "29, SEATON DRIVE",
+      "addressLine2": null,
+      "addressLine3": null,
+      "townCity": "NORTHAMPTON",
+      "county": null,
+      "country": null,
+      "postCode": "NN3 9SS",
       "dxAddress": []
     }
   ],
-  "name": "Organisation",
-  "organisationIdentifier": "62LYJRF",
+  "status": "ACTIVE",
+  "sraRegulated": false,
+  "superUser": {
+    "firstName": "Civil Damages Claims",
+    "lastName": "Organisation 2",
+    "email": "civil.damages.claims+organisation.2.superuser@gmail.com"
+  },
   "paymentAccount": [
     "PBA0077597",
     "PBA0078094"
-  ],
-  "sraRegulated": false,
-  "status": "ACTIVE",
-  "superUser": {
-    "firstName": "Org",
-    "lastName": "Admin",
-    "email": "civil-system-update@mailnesia.com"
-  }
+  ]
 }
+
