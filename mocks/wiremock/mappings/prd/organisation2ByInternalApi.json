@@ -1,7 +1,12 @@
 {
   "request": {
     "method": "GET",
-    "urlPath": "/refdata/internal/v1/organisations/N5AFUXG"
+    "urlPath": "/refdata/internal/v1/organisations",
+    "queryParameters": {
+      "id": {
+        "equalTo": "N5AFUXG"
+      }
+    }
   },
   "response": {
     "status": 200,
