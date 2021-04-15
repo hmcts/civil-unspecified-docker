@@ -1,3 +1,5 @@
+# This repo is now deprecated, [civil-damages-sdk](https://github.com/hmcts/civil-damages-sdk) is used instead
+
 # Unspecified civil claims customised version of CCD Docker :whale:
 
 - [Prerequisites](#prerequisites)
